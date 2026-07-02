@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Mario Aldaco Acevedo">
     <title>Seguridad y Crecimiento Juvenil A.C.</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,28 +12,12 @@
     <style>
         .font-titulo { font-family: 'Montserrat', sans-serif; }
         .font-cuerpo { font-family: 'Open Sans', sans-serif; }
-        
         .bg-diagonal-stripes {
-            background: linear-gradient(
-                135deg,
-                #f1f5f9 0%,
-                #A10A0A 25%, 
-                #8A0B58 45%, 
-                #5B1E7A 65%, 
-                #e2e8f0 100% 
-            );
+            background: linear-gradient(135deg, #f1f5f9 0%, #A10A0A 25%, #8A0B58 45%, #5B1E7A 65%, #e2e8f0 100%);
             opacity: 0.12;
         }
-
-        /* Clase de utilidad fuerte para ocultar elementos (requerido para SPA navigation) */
-        .oculto {
-            display: none !important;
-        }
-
-        /* Ocultar marcador por defecto del acordeón detalles/summary */
-        details > summary::-webkit-details-marker {
-            display: none;
-        }
+        .oculto { display: none !important; }
+        details > summary::-webkit-details-marker { display: none; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-700 font-cuerpo antialiased relative min-h-screen flex flex-col">
@@ -59,22 +44,15 @@
 
     <main class="relative z-10 flex-grow w-full">
 
-        <!-- ==========================================
-             SECCIÓN INICIO Y QUIÉNES SOMOS
-             ========================================== -->
         <section id="sec-inicio" class="w-full max-w-7xl mx-auto px-4 py-12 space-y-12">
-            <!-- PORTADA MODERNA A DOS COLUMNAS -->
             <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-white/95 backdrop-blur-xl p-8 md:p-12 rounded-3xl border border-white shadow-2xl">
                 
-                <!-- Columna Izquierda: Espacio para Imagen de Campo -->
                 <div class="w-full aspect-[4/3] md:aspect-square bg-slate-100 rounded-2xl flex items-center justify-center border border-slate-200 overflow-hidden relative group shadow-inner">
-                    <!-- Etiqueta <img> en el futuro -->
                     <span class="text-slate-400 font-titulo text-sm font-semibold tracking-wide text-center px-4">
                         [ Espacio reservado para fotografía en campo del equipo de la asociación ]
                     </span>
                 </div>
 
-                <!-- Columna Derecha: Logo y Texto Moderno con Colores -->
                 <div class="flex flex-col items-center md:items-start text-center md:text-left space-y-6">
                     <img src="img/logo-sin-fondo.png" alt="Logotipo Oficial" class="h-28 md:h-36 w-auto object-contain filter drop-shadow-md">
                     <h1 class="font-titulo text-4xl md:text-5xl font-bold tracking-tight leading-tight">
@@ -88,7 +66,6 @@
                 </div>
             </div>
 
-            <!-- SECCIÓN "NUESTRO TRABAJO" (Texto conciso y enfocado) -->
             <div class="max-w-5xl mx-auto text-center space-y-6 bg-white/95 backdrop-blur-md p-8 md:p-10 rounded-3xl border border-white shadow-lg">
                 <h2 class="font-titulo text-2xl md:text-3xl font-bold text-slate-900">
                     Nuestro trabajo
@@ -102,16 +79,12 @@
             </div>
         </section>
 
-        <!-- ==========================================
-             SECCIÓN FILOSOFÍA INSTITUCIONAL
-             ========================================== -->
         <section id="sec-filosofia" class="w-full max-w-7xl mx-auto px-4 py-12 space-y-12 oculto">
             <div class="text-center space-y-4">
                 <h2 class="font-titulo text-3xl md:text-4xl font-bold text-slate-900">Filosofía Institucional</h2>
                 <div class="h-1 w-20 bg-[#5B1E7A] mx-auto rounded-full"></div>
             </div>
 
-            <!-- Párrafos introductorios sobre el tejido social -->
             <div class="max-w-4xl mx-auto bg-white/95 backdrop-blur-md p-8 rounded-2xl border border-white shadow-lg text-slate-700 font-light text-base leading-relaxed space-y-4">
                 <h3 class="font-titulo text-xl font-bold text-slate-900 mb-4 text-center">Hacia la reconstrucción del tejido social</h3>
                 <p>Vivimos en un entorno donde la fragmentación del tejido social es una realidad tangible que profundiza la vulnerabilidad y la marginación. La erosión de los vínculos comunitarios y la carencia de redes de apoyo exponen a amplios sectores de la población a escenarios de desigualdad, violencia estructural y falta de oportunidades.</p>
@@ -119,7 +92,6 @@
                 <p>Estamos convencidos de que la paz y la estabilidad se construyen desde la base, uniendo esfuerzos institucionales con empatía y acción territorial. Nuestra filosofía se fundamenta en orientar, acompañar y proveer soluciones que transformen la incertidumbre en resiliencia, garantizando que la equidad y la cultura de la legalidad sean el motor para comunidades más fuertes y autosuficientes.</p>
             </div>
 
-            <!-- Grilla Misión, Visión, Valores (3 tarjetas sólidas) -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
                 <div class="bg-white/95 backdrop-blur-md p-8 rounded-2xl border border-white shadow-lg flex flex-col justify-start">
                     <div class="space-y-4">
@@ -154,7 +126,6 @@
                 </div>
             </div>
 
-            <!-- LOS 6 PUNTOS (Pilares de acción, movidos a filosofía) -->
             <div class="pt-8">
                 <div class="text-center space-y-4 mb-10">
                     <h3 class="font-titulo text-2xl font-bold text-slate-900">Pilares de Acción</h3>
@@ -196,9 +167,6 @@
             </div>
         </section>
 
-        <!-- ==========================================
-             SECCIÓN PROYECTOS SOCIALES (Acordeones Anuales)
-             ========================================== -->
         <section id="sec-proyectos" class="w-full max-w-5xl mx-auto px-4 py-12 space-y-8 oculto">
             <div class="text-center space-y-4 mb-8">
                 <h2 class="font-titulo text-3xl md:text-4xl font-bold text-slate-900">Historial de Proyectos</h2>
@@ -208,19 +176,16 @@
                 <div class="h-1 w-20 bg-[#5B1E7A] mx-auto rounded-full"></div>
             </div>
 
-            <!-- Sistema de Acordeones Anuales con 2 imágenes c/u -->
-
-            <!-- Acordeón 2024 -->
             <details class="group bg-white/95 backdrop-blur-md rounded-2xl shadow-lg border border-slate-200 overflow-hidden" open>
                 <summary class="cursor-pointer bg-slate-50 hover:bg-slate-100 transition-colors p-6 font-titulo font-bold text-xl text-[#5B1E7A] flex justify-between items-center list-none select-none">
-                    Proyectos Operativos 2024
+                    Proyectos Operativos 2026
                     <svg class="w-5 h-5 text-slate-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </summary>
                 <div class="p-6 md:p-8 border-t border-slate-100 flex flex-col md:flex-row gap-8">
                     <div class="flex-1 space-y-4">
-                        <h4 class="font-titulo font-bold text-slate-900 text-lg">Resumen de intervención</h4>
+                        <h4 class="font-titulo font-bold text-slate-900 text-lg">Consolidación de alianzas y expansión</h4>
                         <p class="text-slate-600 text-sm font-light leading-relaxed text-justify md:text-left">
-                            [Descripción concisa del proyecto del año]. Implementación exitosa de talleres de capacitación técnica orientados a la autosuficiencia económica en sectores vulnerables. Se realizaron entregas de herramientas profesionales y se consolidó la vinculación operativa con centros de rehabilitación aliados en el estado.
+                            Fortalecimiento de las capacidades operativas mediante la consolidación de redes de apoyo interinstitucional. Implementación de nuevos modelos de gestión comunitaria enfocados en la autosuficiencia técnica y la reducción de la brecha digital en sectores prioritarios.
                         </p>
                     </div>
                     <div class="flex-1 grid grid-cols-2 gap-4">
@@ -234,7 +199,52 @@
                 </div>
             </details>
 
-            <!-- Acordeón 2023 -->
+            <details class="group bg-white/95 backdrop-blur-md rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
+                <summary class="cursor-pointer bg-slate-50 hover:bg-slate-100 transition-colors p-6 font-titulo font-bold text-xl text-[#5B1E7A] flex justify-between items-center list-none select-none">
+                    Proyectos Operativos 2025
+                    <svg class="w-5 h-5 text-slate-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </summary>
+                <div class="p-6 md:p-8 border-t border-slate-100 flex flex-col md:flex-row gap-8">
+                    <div class="flex-1 space-y-4">
+                        <h4 class="font-titulo font-bold text-slate-900 text-lg">Desarrollo de capacidades técnicas</h4>
+                        <p class="text-slate-600 text-sm font-light leading-relaxed text-justify md:text-left">
+                            Ejecución de programas de capacitación en oficios orientados a la rápida inserción laboral. Se reforzaron las brigadas de salud mental y se establecieron mesas de trabajo para la prevención del delito en zonas de alta vulnerabilidad.
+                        </p>
+                    </div>
+                    <div class="flex-1 grid grid-cols-2 gap-4">
+                        <div class="bg-slate-100 rounded-xl aspect-[4/3] flex items-center justify-center border border-slate-200 text-slate-400 text-xs text-center p-2 shadow-inner">
+                            [ Evidencia Fotográfica 1 ]
+                        </div>
+                        <div class="bg-slate-100 rounded-xl aspect-[4/3] flex items-center justify-center border border-slate-200 text-slate-400 text-xs text-center p-2 shadow-inner">
+                            [ Evidencia Fotográfica 2 ]
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <details class="group bg-white/95 backdrop-blur-md rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
+                <summary class="cursor-pointer bg-slate-50 hover:bg-slate-100 transition-colors p-6 font-titulo font-bold text-xl text-[#5B1E7A] flex justify-between items-center list-none select-none">
+                    Proyectos Operativos 2024
+                    <svg class="w-5 h-5 text-slate-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </summary>
+                <div class="p-6 md:p-8 border-t border-slate-100 flex flex-col md:flex-row gap-8">
+                    <div class="flex-1 space-y-4">
+                        <h4 class="font-titulo font-bold text-slate-900 text-lg">Resumen de intervención</h4>
+                        <p class="text-slate-600 text-sm font-light leading-relaxed text-justify md:text-left">
+                            Implementación exitosa de talleres de capacitación técnica orientados a la autosuficiencia económica en sectores vulnerables. Se realizaron entregas de herramientas profesionales y se consolidó la vinculación operativa con centros de rehabilitación aliados en el estado.
+                        </p>
+                    </div>
+                    <div class="flex-1 grid grid-cols-2 gap-4">
+                        <div class="bg-slate-100 rounded-xl aspect-[4/3] flex items-center justify-center border border-slate-200 text-slate-400 text-xs text-center p-2 shadow-inner">
+                            [ Evidencia Fotográfica 1 ]
+                        </div>
+                        <div class="bg-slate-100 rounded-xl aspect-[4/3] flex items-center justify-center border border-slate-200 text-slate-400 text-xs text-center p-2 shadow-inner">
+                            [ Evidencia Fotográfica 2 ]
+                        </div>
+                    </div>
+                </div>
+            </details>
+
             <details class="group bg-white/95 backdrop-blur-md rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
                 <summary class="cursor-pointer bg-slate-50 hover:bg-slate-100 transition-colors p-6 font-titulo font-bold text-xl text-[#5B1E7A] flex justify-between items-center list-none select-none">
                     Proyectos Operativos 2023
@@ -244,31 +254,7 @@
                     <div class="flex-1 space-y-4">
                         <h4 class="font-titulo font-bold text-slate-900 text-lg">Vinculación territorial y diagnósticos</h4>
                         <p class="text-slate-600 text-sm font-light leading-relaxed text-justify md:text-left">
-                            [Descripción concisa del proyecto del año]. Despliegue territorial enfocado en la realización de diagnósticos operativos en zonas de alto índice delictivo. Se formalizaron redes vecinales para la prevención y se iniciaron las brigadas de orientación familiar en apoyo psicológico integral.
-                        </p>
-                    </div>
-                    <div class="flex-1 grid grid-cols-2 gap-4">
-                        <div class="bg-slate-100 rounded-xl aspect-[4/3] flex items-center justify-center border border-slate-200 text-slate-400 text-xs text-center p-2 shadow-inner">
-                            [ Evidencia Fotográfica 1 ]
-                        </div>
-                        <div class="bg-slate-100 rounded-xl aspect-[4/3] flex items-center justify-center border border-slate-200 text-slate-400 text-xs text-center p-2 shadow-inner">
-                            [ Evidencia Fotográfica 2 ]
-                        </div>
-                    </div>
-                </div>
-            </details>
-
-            <!-- Acordeón 2022 -->
-            <details class="group bg-white/95 backdrop-blur-md rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
-                <summary class="cursor-pointer bg-slate-50 hover:bg-slate-100 transition-colors p-6 font-titulo font-bold text-xl text-[#5B1E7A] flex justify-between items-center list-none select-none">
-                    Proyectos Operativos 2022
-                    <svg class="w-5 h-5 text-slate-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <div class="p-6 md:p-8 border-t border-slate-100 flex flex-col md:flex-row gap-8">
-                    <div class="flex-1 space-y-4">
-                        <h4 class="font-titulo font-bold text-slate-900 text-lg">Inicio de acciones y cultura de paz</h4>
-                        <p class="text-slate-600 text-sm font-light leading-relaxed text-justify md:text-left">
-                            [Descripción concisa del proyecto del año]. Lanzamiento institucional de la Asociación Civil. Primeras intervenciones enfocadas en la promoción de la cultura de paz y la legalidad a través de brigadas comunitarias de salud mental y talleres de arte juvenil en Guanajuato.
+                            Despliegue territorial enfocado en la realización de diagnósticos operativos en zonas de alto índice delictivo. Se formalizaron redes vecinales para la prevención y se iniciaron las brigadas de orientación familiar en apoyo psicológico integral.
                         </p>
                     </div>
                     <div class="flex-1 grid grid-cols-2 gap-4">
@@ -283,9 +269,6 @@
             </details>
         </section>
 
-        <!-- ==========================================
-             SECCIÓN CONTACTO / DIRECTORIO
-             ========================================== -->
         <section id="sec-contacto" class="w-full max-w-7xl mx-auto px-4 py-12 space-y-8 oculto">
             <div class="text-center space-y-4 mb-8">
                 <h2 class="font-titulo text-3xl md:text-4xl font-bold text-slate-900">Atención y Vinculación</h2>
@@ -297,9 +280,7 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 
-                <!-- Columna Izquierda: Contacto y Cobertura (Apiladas) -->
                 <div class="space-y-6 flex flex-col">
-                    <!-- Tarjeta Contacto -->
                     <div class="bg-white/95 backdrop-blur-md p-6 rounded-2xl border border-slate-200 shadow-lg flex-1 transition-all">
                         <h3 class="font-titulo text-lg font-bold text-[#A10A0A] border-b border-slate-100 pb-2 mb-4">Contacto Directo</h3>
                         <div class="space-y-4 text-sm text-slate-700 font-light">
@@ -315,10 +296,8 @@
                         </div>
                     </div>
                     
-                    <!-- Tarjeta Cobertura Territorial -->
                     <div class="bg-white/95 backdrop-blur-md p-6 rounded-2xl border border-slate-200 shadow-lg relative overflow-hidden transition-all">
                         <div class="absolute -right-4 -top-4 opacity-5">
-                            <!-- Icono de mapa genérico de fondo -->
                             <svg class="w-32 h-32 text-[#8A0B58]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                         </div>
                         <h3 class="font-titulo text-lg font-bold text-[#8A0B58] border-b border-slate-100 pb-2 mb-4 relative z-10">Cobertura Territorial</h3>
@@ -328,7 +307,6 @@
                     </div>
                 </div>
 
-                <!-- Columna Central: Formulario de Contacto -->
                 <div class="bg-white/95 backdrop-blur-md p-8 rounded-2xl border border-slate-200 shadow-lg lg:col-span-1 flex flex-col transition-all">
                     <h3 class="font-titulo text-lg font-bold text-[#5B1E7A] border-b border-slate-100 pb-2 mb-6">Envíanos un mensaje</h3>
                     <form action="#" method="POST" class="space-y-4 flex-1 flex flex-col">
@@ -350,7 +328,6 @@
                     </form>
                 </div>
 
-                <!-- Columna Derecha: Panel de Transparencia -->
                 <div class="bg-white/95 backdrop-blur-md p-8 rounded-2xl border border-slate-200 shadow-lg lg:col-span-1 transition-all">
                     <h3 class="font-titulo text-lg font-bold text-slate-900 border-b border-slate-100 pb-2 mb-6">Transparencia Institucional</h3>
                     
@@ -382,10 +359,6 @@
             </div>
         </section>
 
-        <!-- ==========================================
-             SECCIÓN AVISO DE PRIVACIDAD INTEGRAL
-             (Actualizado con cláusula especializada en fotografías/videos)
-             ========================================== -->
         <section id="sec-privacidad" class="w-full max-w-4xl mx-auto px-4 py-12 space-y-8 oculto transition-all">
             <div class="text-center space-y-4 mb-8">
                 <h2 class="font-titulo text-3xl md:text-4xl font-bold text-slate-900">Aviso de Privacidad Integral</h2>
@@ -433,12 +406,10 @@
 
     </main>
 
-    <!-- FOOTER ACTUALIZADO CON COLORES Y DATOS DEL LOGO -->
     <footer class="relative z-20 bg-gradient-to-r from-[#5B1E7A] via-[#8A0B58] to-[#A10A0A] text-white border-t border-[#3d1452] font-light w-full mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-1 md:grid-cols-2 gap-8">
             <div class="space-y-4">
                 <div class="flex items-center gap-3">
-                    <!-- Imagen adaptada para footer oscuro -->
                     <img src="img/logo-sin-fondo.png" alt="Logo Blanco" class="h-12 w-auto brightness-0 invert">
                     <span class="font-titulo font-bold text-white text-lg tracking-tight block">Seguridad y Crecimiento Juvenil A.C.</span>
                 </div>
@@ -456,73 +427,46 @@
         </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-purple-200 font-normal">
             <div>&copy; 2026 Seguridad y Crecimiento Juvenil A.C. Todos los derechos reservados.</div>
-            <!-- Enlace en el footer añadido al sistema de SPA -->
             <a href="#" id="link-privacidad-footer" class="hover:text-white transition-colors underline">Aviso de Privacidad</a>
         </div>
     </footer>
 
-    <!-- LÓGICA JAVASCRIPT: Sistema Single Page Application (SPA) -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Referencias a los botones de navegación principal
             const btnInicio = document.getElementById('nav-inicio');
             const btnFilosofia = document.getElementById('nav-filosofia');
             const btnProyectos = document.getElementById('nav-proyectos');
             const btnContacto = document.getElementById('nav-contacto');
             const btnLogo = document.getElementById('logo-inicio');
-            
-            // Referencias a enlaces internos que llevan a Aviso de Privacidad
             const btnPrivacidadPanel = document.getElementById('link-privacidad-panel');
             const btnPrivacidadFooter = document.getElementById('link-privacidad-footer');
-
-            // Referencias a las secciones de la SPA
             const secInicio = document.getElementById('sec-inicio');
             const secFilosofia = document.getElementById('sec-filosofia');
             const secProyectos = document.getElementById('sec-proyectos');
             const secContacto = document.getElementById('sec-contacto');
             const secPrivacidad = document.getElementById('sec-privacidad');
-
-            // Listas para control de visibilidad y estilos
             const todosLosEnlacesMain = document.querySelectorAll('.nav-link');
             const todasLasSecciones = [secInicio, secFilosofia, secProyectos, secContacto, secPrivacidad];
 
-            /**
-             * Función robusta para activar una sección y deseleccionar las demás.
-             * @param {HTMLElement} seccionActiva - La sección que se debe mostrar.
-             * @param {HTMLElement} enlaceActivo - El botón de la navbar principal a resaltar.
-             */
             function activarSeccion(seccionActiva, enlaceActivo) {
-                // 1. Ocultar todas las secciones
                 todasLasSecciones.forEach(sec => sec.classList.add('oculto'));
-                
-                // 2. Mostrar la sección solicitada
                 seccionActiva.classList.remove('oculto');
-
-                // 3. Resetear estilos de todos los botones de la navbar principal
                 todosLosEnlacesMain.forEach(link => {
                     link.classList.remove('text-purple-700', 'font-bold');
                     link.classList.add('text-slate-600');
                 });
-
-                // 4. Aplicar estilo activo al botón navbar solicitado (si aplica)
                 if (enlaceActivo) {
                     enlaceActivo.classList.remove('text-slate-600');
                     enlaceActivo.classList.add('text-purple-700', 'font-bold');
                 }
-
-                // 5. Scroll arriba suave
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
 
-            // Asignación de eventos Click a la navegación principal
             btnInicio.addEventListener('click', (e) => { e.preventDefault(); activarSeccion(secInicio, btnInicio); });
             btnFilosofia.addEventListener('click', (e) => { e.preventDefault(); activarSeccion(secFilosofia, btnFilosofia); });
             btnProyectos.addEventListener('click', (e) => { e.preventDefault(); activarSeccion(secProyectos, btnProyectos); });
             btnContacto.addEventListener('click', (e) => { e.preventDefault(); activarSeccion(secContacto, btnContacto); });
             btnLogo.addEventListener('click', (e) => { e.preventDefault(); activarSeccion(secInicio, btnInicio); });
-
-            // Asignación de eventos a los enlaces internos del Aviso de Privacidad
-            // Pasan null como enlace activo para quitar foco de la navbar principal
             btnPrivacidadPanel.addEventListener('click', (e) => { e.preventDefault(); activarSeccion(secPrivacidad, null); });
             btnPrivacidadFooter.addEventListener('click', (e) => { e.preventDefault(); activarSeccion(secPrivacidad, null); });
         });
