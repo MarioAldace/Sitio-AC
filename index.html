@@ -8,14 +8,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Directriz 1: Carga consolidada y estricta en una sola petición -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         .font-titulo { font-family: 'Montserrat', sans-serif; }
         .font-cuerpo { font-family: 'Open Sans', sans-serif; }
         .bg-diagonal-stripes {
-            /* Directriz 4: Opacidad eliminada del CSS, transferida a utilidades Tailwind */
             background: linear-gradient(135deg, #f1f5f9 0%, #A10A0A 25%, #8A0B58 45%, #5B1E7A 65%, #e2e8f0 100%);
+            opacity: 0.12;
         }
         .oculto { display: none !important; }
         details > summary::-webkit-details-marker { display: none; }
@@ -23,36 +22,37 @@
 </head>
 <body class="bg-slate-50 text-slate-700 font-cuerpo antialiased relative min-h-screen flex flex-col">
 
-    <!-- Directriz 4: Implementación de opacity-[0.12] nativo de Tailwind -->
-    <div class="fixed inset-0 z-0 bg-diagonal-stripes opacity-[0.12] pointer-events-none"></div>
+    <div class="fixed inset-0 z-0 bg-diagonal-stripes pointer-events-none"></div>
 
     <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm w-full">
         <div class="max-w-7xl mx-auto px-4 py-3 md:h-20 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0">
-            <div class="flex items-center gap-3 cursor-pointer text-center md:text-left justify-center md:justify-start btn-navegacion" data-target="sec-inicio">
-                <img src="img/logo-sin-fondo.png" alt="Logo Seguridad y Crecimiento Juvenil" class="h-10 md:h-12 w-auto object-contain pointer-events-none">
-                <span class="font-titulo text-sm md:text-lg font-bold text-slate-900 tracking-tight block max-w-[240px] md:max-w-none pointer-events-none">
+            <div class="flex items-center gap-3 cursor-pointer text-center md:text-left justify-center md:justify-start" id="logo-inicio">
+                <img src="img/logo-sin-fondo.png" alt="Logo Seguridad y Crecimiento Juvenil" class="h-10 md:h-12 w-auto object-contain">
+                <span class="font-titulo text-sm md:text-lg font-bold text-slate-900 tracking-tight block max-w-[240px] md:max-w-none">
                     Seguridad y Crecimiento Juvenil A.C.
                 </span>
             </div>
             
-            <nav id="menu-principal" class="flex items-center justify-center gap-2 sm:gap-4 md:gap-7 font-titulo font-semibold text-[11px] sm:text-xs md:text-sm w-full md:w-auto border-t border-slate-100 pt-2 md:pt-0 md:border-t-0">
-                <a href="#" data-target="sec-inicio" class="btn-navegacion nav-link text-purple-700 font-bold transition-colors py-1 px-2 rounded hover:bg-slate-100">Inicio</a>
-                <a href="#" data-target="sec-filosofia" class="btn-navegacion nav-link text-slate-600 hover:text-purple-700 transition-colors py-1 px-2 rounded hover:bg-slate-100">Filosofía</a>
-                <a href="#" data-target="sec-proyectos" class="btn-navegacion nav-link text-slate-600 hover:text-purple-700 transition-colors py-1 px-2 rounded hover:bg-slate-100">Proyectos</a>
-                <a href="#" data-target="sec-contacto" class="btn-navegacion nav-link text-slate-600 hover:text-purple-700 transition-colors py-1 px-2 rounded hover:bg-slate-100 text-center">Directorio</a>
+            <nav class="flex items-center justify-center gap-2 sm:gap-4 md:gap-7 font-titulo font-semibold text-[11px] sm:text-xs md:text-sm w-full md:w-auto border-t border-slate-100 pt-2 md:pt-0 md:border-t-0">
+                <a href="#" id="nav-inicio" class="nav-link text-purple-700 font-bold transition-colors py-1 px-2 rounded hover:bg-slate-100">Inicio</a>
+                <a href="#" id="nav-filosofia" class="nav-link text-slate-600 hover:text-purple-700 transition-colors py-1 px-2 rounded hover:bg-slate-100">Filosofía</a>
+                <a href="#" id="nav-proyectos" class="nav-link text-slate-600 hover:text-purple-700 transition-colors py-1 px-2 rounded hover:bg-slate-100">Proyectos</a>
+                <a href="#" id="nav-contacto" class="nav-link text-slate-600 hover:text-purple-700 transition-colors py-1 px-2 rounded hover:bg-slate-100 text-center">Directorio</a>
             </nav>
         </div>
     </header>
 
     <main class="relative z-10 flex-grow w-full">
-        <!-- SECCIÓN INICIO -->
-        <section id="sec-inicio" class="seccion-app w-full max-w-7xl mx-auto px-4 py-12 space-y-12">
+
+        <section id="sec-inicio" class="w-full max-w-7xl mx-auto px-4 py-12 space-y-12">
             <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-white/95 backdrop-blur-xl p-8 md:p-12 rounded-3xl border border-white shadow-2xl">
+                
                 <div class="w-full aspect-[4/3] md:aspect-square bg-slate-100 rounded-2xl flex items-center justify-center border border-slate-200 overflow-hidden relative group shadow-inner">
                     <img src="img/portada-temporal.jpg" alt="Seguridad y Crecimiento Juvenil" class="w-full h-full object-cover contrast-105 brightness-100 saturate-105 hover:scale-105 transition-transform duration-300">
                 </div>
+
                 <div class="flex flex-col items-center md:items-start text-center md:text-left space-y-6">
-                    <img src="img/logo-sin-fondo.png" alt="Logotipo Oficial" class="h-28 md:h-36 w-auto object-contain filter drop-shadow-md pointer-events-none">
+                    <img src="img/logo-sin-fondo.png" alt="Logotipo Oficial" class="h-28 md:h-36 w-auto object-contain filter drop-shadow-md">
                     <h1 class="font-titulo text-4xl md:text-5xl font-bold tracking-tight leading-tight">
                         <span class="text-[#A10A0A] block mb-1">Acompañamos.</span>
                         <span class="text-[#8A0B58] block mb-1">Orientamos.</span>
@@ -65,18 +65,20 @@
             </div>
 
             <div class="max-w-5xl mx-auto text-center space-y-6 bg-white/95 backdrop-blur-md p-8 md:p-10 rounded-3xl border border-white shadow-lg">
-                <h2 class="font-titulo text-2xl md:text-3xl font-bold text-slate-900">Nuestro trabajo</h2>
+                <h2 class="font-titulo text-2xl md:text-3xl font-bold text-slate-900">
+                    Nuestro trabajo
+                </h2>
                 <div class="h-1 w-16 bg-[#8A0B58] mx-auto rounded-full"></div>
                 <div class="text-slate-700 space-y-4 leading-relaxed text-base md:text-lg font-light text-justify md:text-center">
-                    <p>Asumimos el reto de enfrentar las profundas desigualdades sociales que fragmentan a nuestras comunidades. Las barreras económicas, la marginación y la falta de oportunidades exigen más que asistencia; demandan estrategias estructurales. Nuestro trabajo consiste en identificar las raíces de la vulnerabilidad y diseñar soluciones operativas que protejan a los sectores desfavorecidos. A través de la intervención directa en campo, la capacitación y la gestión de recursos, construimos redes de apoyo que empoderan a las personas para superar la adversidad, acceder a una vida digna y consolidar una verdadera cultura de paz.</p>
+                    <p>
+                        Asumimos el reto de enfrentar las profundas desigualdades sociales que fragmentan a nuestras comunidades. Las barreras económicas, la marginación y la falta de oportunidades exigen más que asistencia; demandan estrategias estructurales. Nuestro trabajo consiste en identificar las raíces de la vulnerabilidad y diseñar soluciones operativas que protejan a los sectores desfavorecidos. A través de la intervención directa en campo, la capacitación y la gestión de recursos, construimos redes de apoyo que empoderan a las personas para superar la adversidad, acceder a una vida digna y consolidar una verdadera cultura de paz.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN FILOSOFÍA -->
-        <section id="sec-filosofia" class="seccion-app w-full max-w-7xl mx-auto px-4 py-12 space-y-12 oculto">
+        <section id="sec-filosofia" class="w-full max-w-7xl mx-auto px-4 py-12 space-y-12 oculto">
             <div class="text-center space-y-4">
-                <!-- Directriz 3: Estructura estricta con h2 como cabecera principal de la sección -->
                 <h2 class="font-titulo text-3xl md:text-4xl font-bold text-slate-900">Filosofía Institucional</h2>
                 <div class="h-1 w-20 bg-[#5B1E7A] mx-auto rounded-full"></div>
             </div>
@@ -90,23 +92,35 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
                 <div class="bg-white/95 backdrop-blur-md p-8 rounded-2xl border border-white shadow-lg flex flex-col justify-start">
-                    <h3 class="font-titulo text-xl font-bold text-[#A10A0A] mb-4">Misión</h3>
-                    <p class="text-slate-700 text-sm leading-relaxed font-light">Colaborar activamente en la reestructuración del tejido social mediante programas de intervención, capacitación y apoyo institucional. Nos enfocamos en sectores de alta vulnerabilidad económica y social, brindando acompañamiento jurídico, psicológico y operativo para garantizar el acceso a oportunidades dignas y a procesos de desarrollo integral.</p>
+                    <div class="space-y-4">
+                        <h3 class="font-titulo text-xl font-bold text-[#A10A0A]">Misión</h3>
+                        <p class="text-slate-700 text-sm leading-relaxed font-light">
+                            Colaborar activamente en la reestructuración del tejido social mediante programas de intervención, capacitación y apoyo institucional. Nos enfocamos en sectores de alta vulnerabilidad económica y social, brindando acompañamiento jurídico, psicológico y operativo para garantizar el acceso a oportunidades dignas y a procesos de desarrollo integral.
+                        </p>
+                    </div>
                 </div>
+
                 <div class="bg-white/95 backdrop-blur-md p-8 rounded-2xl border border-white shadow-lg flex flex-col justify-start">
-                    <h3 class="font-titulo text-xl font-bold text-[#8A0B58] mb-4">Visión</h3>
-                    <p class="text-slate-700 text-sm leading-relaxed font-light">Consolidar un modelo de desarrollo social donde la cultura de paz, la equidad y la reintegración comunitaria sean derechos tangibles. Aspiramos a ser el principal referente en el estado de Guanajuato en la reducción de brechas de desigualdad, promoviendo entornos donde las personas cuenten con las herramientas necesarias para su completa autosuficiencia.</p>
+                    <div class="space-y-4">
+                        <h3 class="font-titulo text-xl font-bold text-[#8A0B58]">Visión</h3>
+                        <p class="text-slate-700 text-sm leading-relaxed font-light">
+                            Consolidar un modelo de desarrollo social donde la cultura de paz, la equidad y la reintegración comunitaria sean derechos tangibles. Aspiramos a ser el principal referente en el estado de Guanajuato en la reducción de brechas de desigualdad, promoviendo entornos donde las personas cuenten con las herramientas necesarias para su completa autosuficiencia.
+                        </p>
+                    </div>
                 </div>
+
                 <div class="bg-white/95 backdrop-blur-md p-8 rounded-2xl border border-white shadow-lg flex flex-col justify-start">
-                    <h3 class="font-titulo text-xl font-bold text-[#5B1E7A] mb-4">Valores (6 ejes)</h3>
-                    <ul class="text-slate-700 text-sm space-y-3 leading-relaxed font-light">
-                        <li><strong class="text-slate-900 font-semibold">Empatía:</strong> Actuamos de manera objetiva y sin estigmatizar.</li>
-                        <li><strong class="text-slate-900 font-semibold">Solidaridad:</strong> Responsabilidad activa y territorial.</li>
-                        <li><strong class="text-slate-900 font-semibold">Resiliencia:</strong> Creemos en la capacidad de superación.</li>
-                        <li><strong class="text-slate-900 font-semibold">Integridad:</strong> Transparencia social y apego a la legalidad.</li>
-                        <li><strong class="text-slate-900 font-semibold">Equidad:</strong> Trato digno para los sectores desprotegidos.</li>
-                        <li><strong class="text-slate-900 font-semibold">Compromiso:</strong> Soluciones prácticas y resultados medibles.</li>
-                    </ul>
+                    <div class="space-y-4">
+                        <h3 class="font-titulo text-xl font-bold text-[#5B1E7A]">Valores (6 ejes)</h3>
+                        <ul class="text-slate-700 text-sm space-y-3 leading-relaxed font-light">
+                            <li><strong class="text-slate-900 font-semibold">Empatía:</strong> Actuamos de manera objetiva y sin estigmatizar.</li>
+                            <li><strong class="text-slate-900 font-semibold">Solidaridad:</strong> Responsabilidad activa y territorial.</li>
+                            <li><strong class="text-slate-900 font-semibold">Resiliencia:</strong> Creemos en la capacidad de superación.</li>
+                            <li><strong class="text-slate-900 font-semibold">Integridad:</strong> Transparencia social y apego a la legalidad.</li>
+                            <li><strong class="text-slate-900 font-semibold">Equidad:</strong> Trato digno para los sectores desprotegidos.</li>
+                            <li><strong class="text-slate-900 font-semibold">Compromiso:</strong> Soluciones prácticas y resultados medibles.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
@@ -115,13 +129,43 @@
                     <h3 class="font-titulo text-2xl font-bold text-slate-900">Pilares de Acción</h3>
                     <p class="text-sm text-slate-500 font-light">Ejes fundamentales de nuestro trabajo directo en la comunidad.</p>
                 </div>
-                <!-- Contenedor dinámico de pilares -->
-                <div id="contenedor-pilares" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white/95 backdrop-blur-md p-6 rounded-2xl border border-white shadow-md transition-transform hover:-translate-y-1">
+                        <div class="text-[#8A0B58] font-bold text-2xl mb-2">01</div>
+                        <h4 class="font-titulo font-bold text-slate-900 text-base mb-2 font-semibold">Apoyo institucional</h4>
+                        <p class="text-sm text-slate-600 font-light leading-relaxed">Fortalecemos la estructura operativa y administrativa de organismos aliados, centros de rehabilitación y colectivos comunitarios.</p>
+                    </div>
+                    <div class="bg-white/95 backdrop-blur-md p-6 rounded-2xl border border-white shadow-md transition-transform hover:-translate-y-1">
+                        <div class="text-[#8A0B58] font-bold text-2xl mb-2">02</div>
+                        <h4 class="font-titulo font-bold text-slate-900 text-base mb-2 font-semibold">Orientación familiar</h4>
+                        <p class="text-sm text-slate-600 font-light leading-relaxed">Acompañamos a los núcleos familiares en crisis, dotándolos de estrategias para afrontar escenarios de riesgo o violencia.</p>
+                    </div>
+                    <div class="bg-white/95 backdrop-blur-md p-6 rounded-2xl border border-white shadow-md transition-transform hover:-translate-y-1">
+                        <div class="text-[#8A0B58] font-bold text-2xl mb-2">03</div>
+                        <h4 class="font-titulo font-bold text-slate-900 text-base mb-2 font-semibold">Reintegración comunitaria</h4>
+                        <p class="text-sm text-slate-600 font-light leading-relaxed">Desarrollamos redes de apoyo vecinal para asegurar que las personas se reincorporen activamente a su entorno.</p>
+                    </div>
+                    <div class="bg-white/95 backdrop-blur-md p-6 rounded-2xl border border-white shadow-md transition-transform hover:-translate-y-1">
+                        <div class="text-[#8A0B58] font-bold text-2xl mb-2">04</div>
+                        <h4 class="font-titulo font-bold text-slate-900 text-base mb-2 font-semibold">Cultura de paz</h4>
+                        <p class="text-sm text-slate-600 font-light leading-relaxed">Fomentamos la legalidad y la resolución pacífica de conflictos en zonas vulnerables, promoviendo espacios seguros.</p>
+                    </div>
+                    <div class="bg-white/95 backdrop-blur-md p-6 rounded-2xl border border-white shadow-md transition-transform hover:-translate-y-1">
+                        <div class="text-[#8A0B58] font-bold text-2xl mb-2">05</div>
+                        <h4 class="font-titulo font-bold text-slate-900 text-base mb-2 font-semibold">Capacitación y oficios</h4>
+                        <p class="text-sm text-slate-600 font-light leading-relaxed">Impulsamos la formación técnica como herramienta de autosuficiencia, combatiendo la marginación económica.</p>
+                    </div>
+                    <div class="bg-white/95 backdrop-blur-md p-6 rounded-2xl border border-white shadow-md transition-transform hover:-translate-y-1">
+                        <div class="text-[#8A0B58] font-bold text-2xl mb-2">06</div>
+                        <h4 class="font-titulo font-bold text-slate-900 text-base mb-2 font-semibold">Salud mental</h4>
+                        <p class="text-sm text-slate-600 font-light leading-relaxed">Coordinamos brigadas psicológicas enfocadas en superar traumas y lograr estabilidad emocional para el crecimiento personal.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- SECCIÓN PROYECTOS -->
-        <section id="sec-proyectos" class="seccion-app w-full max-w-5xl mx-auto px-4 py-12 space-y-8 oculto">
+        <section id="sec-proyectos" class="w-full max-w-5xl mx-auto px-4 py-12 space-y-8 oculto">
             <div class="text-center space-y-4 mb-8">
                 <h2 class="font-titulo text-3xl md:text-4xl font-bold text-slate-900">Historial de Proyectos</h2>
                 <p class="text-sm text-slate-600 font-light max-w-2xl mx-auto">
@@ -129,12 +173,101 @@
                 </p>
                 <div class="h-1 w-20 bg-[#5B1E7A] mx-auto rounded-full"></div>
             </div>
-            <!-- Contenedor dinámico de proyectos -->
-            <div id="contenedor-proyectos" class="space-y-4"></div>
+
+            <details class="group bg-white/95 backdrop-blur-md rounded-2xl shadow-lg border border-slate-200 overflow-hidden" open>
+                <summary class="cursor-pointer bg-slate-50 hover:bg-slate-100 transition-colors p-6 font-titulo font-bold text-xl text-[#5B1E7A] flex justify-between items-center list-none select-none">
+                    Proyectos Operativos 2026
+                    <svg class="w-5 h-5 text-slate-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </summary>
+                <div class="p-6 md:p-8 border-t border-slate-100 flex flex-col md:flex-row gap-8">
+                    <div class="flex-1 space-y-4">
+                        <h4 class="font-titulo font-bold text-slate-900 text-lg">Consolidación de alianzas y expansión</h4>
+                        <p class="text-slate-600 text-sm font-light leading-relaxed text-justify md:text-left">
+                            Fortalecimiento de las capacidades operativas mediante la consolidación de redes de apoyo interinstitucional. Implementación de nuevos modelos de gestión comunitaria enfocados en la autosuficiencia técnica y la reducción de la brecha digital en sectores prioritarios.
+                        </p>
+                    </div>
+                    <div class="flex-1 grid grid-cols-2 gap-4">
+                        <div class="bg-slate-100 rounded-xl aspect-[4/3] flex items-center justify-center border border-slate-200 text-slate-400 text-xs text-center p-2 shadow-inner">
+                            [ Evidencia Fotográfica 1 ]
+                        </div>
+                        <div class="bg-slate-100 rounded-xl aspect-[4/3] flex items-center justify-center border border-slate-200 text-slate-400 text-xs text-center p-2 shadow-inner">
+                            [ Evidencia Fotográfica 2 ]
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <details class="group bg-white/95 backdrop-blur-md rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
+                <summary class="cursor-pointer bg-slate-50 hover:bg-slate-100 transition-colors p-6 font-titulo font-bold text-xl text-[#5B1E7A] flex justify-between items-center list-none select-none">
+                    Proyectos Operativos 2025
+                    <svg class="w-5 h-5 text-slate-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </summary>
+                <div class="p-6 md:p-8 border-t border-slate-100 flex flex-col md:flex-row gap-8">
+                    <div class="flex-1 space-y-4">
+                        <h4 class="font-titulo font-bold text-slate-900 text-lg">Desarrollo de capacidades técnicas</h4>
+                        <p class="text-slate-600 text-sm font-light leading-relaxed text-justify md:text-left">
+                            Ejecución de programas de capacitación en oficios orientados a la rápida inserción laboral. Se reforzaron las brigadas de salud mental y se establecieron mesas de trabajo para la prevención del delito en zonas de alta vulnerabilidad.
+                        </p>
+                    </div>
+                    <div class="flex-1 grid grid-cols-2 gap-4">
+                        <div class="bg-slate-100 rounded-xl aspect-[4/3] flex items-center justify-center border border-slate-200 text-slate-400 text-xs text-center p-2 shadow-inner">
+                            [ Evidencia Fotográfica 1 ]
+                        </div>
+                        <div class="bg-slate-100 rounded-xl aspect-[4/3] flex items-center justify-center border border-slate-200 text-slate-400 text-xs text-center p-2 shadow-inner">
+                            [ Evidencia Fotográfica 2 ]
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <details class="group bg-white/95 backdrop-blur-md rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
+                <summary class="cursor-pointer bg-slate-50 hover:bg-slate-100 transition-colors p-6 font-titulo font-bold text-xl text-[#5B1E7A] flex justify-between items-center list-none select-none">
+                    Proyectos Operativos 2024
+                    <svg class="w-5 h-5 text-slate-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </summary>
+                <div class="p-6 md:p-8 border-t border-slate-100 flex flex-col md:flex-row gap-8">
+                    <div class="flex-1 space-y-4">
+                        <h4 class="font-titulo font-bold text-slate-900 text-lg">Resumen de intervención</h4>
+                        <p class="text-slate-600 text-sm font-light leading-relaxed text-justify md:text-left">
+                            Implementación exitosa de talleres de capacitación técnica orientados a la autosuficiencia económica en sectores vulnerables. Se realizaron entregas de herramientas profesionales y se consolidó la vinculación operativa con centros de rehabilitación aliados en el estado.
+                        </p>
+                    </div>
+                    <div class="flex-1 grid grid-cols-2 gap-4">
+                        <div class="bg-slate-100 rounded-xl aspect-[4/3] flex items-center justify-center border border-slate-200 text-slate-400 text-xs text-center p-2 shadow-inner">
+                            [ Evidencia Fotográfica 1 ]
+                        </div>
+                        <div class="bg-slate-100 rounded-xl aspect-[4/3] flex items-center justify-center border border-slate-200 text-slate-400 text-xs text-center p-2 shadow-inner">
+                            [ Evidencia Fotográfica 2 ]
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <details class="group bg-white/95 backdrop-blur-md rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
+                <summary class="cursor-pointer bg-slate-50 hover:bg-slate-100 transition-colors p-6 font-titulo font-bold text-xl text-[#5B1E7A] flex justify-between items-center list-none select-none">
+                    Proyectos Operativos 2023
+                    <svg class="w-5 h-5 text-slate-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </summary>
+                <div class="p-6 md:p-8 border-t border-slate-100 flex flex-col md:flex-row gap-8">
+                    <div class="flex-1 space-y-4">
+                        <h4 class="font-titulo font-bold text-slate-900 text-lg">Vinculación territorial y diagnósticos</h4>
+                        <p class="text-slate-600 text-sm font-light leading-relaxed text-justify md:text-left">
+                            Despliegue territorial enfocado en la realización de diagnósticos operativos en zonas de alto índice delictivo. Se formalizaron redes vecinales para la prevención y se iniciaron las brigadas de orientación familiar en apoyo psicológico integral.
+                        </p>
+                    </div>
+                    <div class="flex-1 grid grid-cols-2 gap-4">
+                        <div class="bg-slate-100 rounded-xl aspect-[4/3] flex items-center justify-center border border-slate-200 text-slate-400 text-xs text-center p-2 shadow-inner">
+                            [ Evidencia Fotográfica 1 ]
+                        </div>
+                        <div class="bg-slate-100 rounded-xl aspect-[4/3] flex items-center justify-center border border-slate-200 text-slate-400 text-xs text-center p-2 shadow-inner">
+                            [ Evidencia Fotográfica 2 ]
+                        </div>
+                    </div>
+                </div>
+            </details>
         </section>
 
-        <!-- SECCIÓN CONTACTO -->
-        <section id="sec-contacto" class="seccion-app w-full max-w-7xl mx-auto px-4 py-12 space-y-8 oculto">
+        <section id="sec-contacto" class="w-full max-w-7xl mx-auto px-4 py-12 space-y-8 oculto">
             <div class="text-center space-y-4 mb-8">
                 <h2 class="font-titulo text-3xl md:text-4xl font-bold text-slate-900">Atención y Vinculación</h2>
                 <p class="text-sm text-slate-600 font-light max-w-2xl mx-auto">
@@ -144,6 +277,7 @@
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                
                 <div class="space-y-6 flex flex-col">
                     <div class="bg-white/95 backdrop-blur-md p-6 rounded-2xl border border-slate-200 shadow-lg flex-1 transition-all">
                         <h3 class="font-titulo text-lg font-bold text-[#A10A0A] border-b border-slate-100 pb-2 mb-4">Contacto Directo</h3>
@@ -152,7 +286,7 @@
                             <div>
                                 <strong class="font-semibold text-slate-900">Correo electrónico:</strong><br>
                                 <a href="mailto:acseguridadycrecimientojuvenil@gmail.com" class="hover:text-[#8A0B58] transition-colors flex items-center gap-1.5 mt-1">
-                                    <svg class="w-4 h-4 fill-none stroke-current pointer-events-none" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                    <svg class="w-4 h-4 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                                     acseguridadycrecimientojuvenil@gmail.com
                                 </a>
                             </div>
@@ -160,11 +294,11 @@
                                 <strong class="font-semibold text-slate-900 block mb-2">Redes Oficiales:</strong>
                                 <div class="flex gap-3">
                                     <a href="https://www.facebook.com/profile.php?id=61574579185425&locale=es_LA" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100 transition-colors text-xs font-semibold flex items-center gap-1.5">
-                                        <svg class="w-4 h-4 fill-current pointer-events-none" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/></svg>
+                                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/></svg>
                                         Facebook
                                     </a>
                                     <a href="https://www.instagram.com/seg_crecimiento_juvenil_ac/" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 bg-pink-50 text-pink-700 rounded-lg hover:bg-pink-100 transition-colors text-xs font-semibold flex items-center gap-1.5">
-                                        <svg class="w-4 h-4 fill-current pointer-events-none" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
                                         Instagram
                                     </a>
                                 </div>
@@ -173,8 +307,8 @@
                     </div>
                     
                     <div class="bg-white/95 backdrop-blur-md p-6 rounded-2xl border border-slate-200 shadow-lg relative overflow-hidden transition-all">
-                        <div class="absolute -right-4 -top-4 opacity-5 pointer-events-none">
-                            <svg class="w-32 h-32 text-[#8A0B58] pointer-events-none" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        <div class="absolute -right-4 -top-4 opacity-5">
+                            <svg class="w-32 h-32 text-[#8A0B58]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                         </div>
                         <h3 class="font-titulo text-lg font-bold text-[#8A0B58] border-b border-slate-100 pb-2 mb-4 relative z-10">Cobertura Territorial</h3>
                         <p class="text-sm text-slate-600 font-light relative z-10 leading-relaxed text-justify md:text-left">
@@ -217,6 +351,7 @@
                                 <strong class="block text-slate-900 text-xs uppercase tracking-wide">Registro Federal de Contribuyentes (RFC)</strong>
                                 <span class="font-mono text-sm bg-white px-2 py-1 rounded border border-slate-200 mt-1 inline-block">[ SCJ-XXXXXX-XXX ]</span>
                             </div>
+                            
                             <div class="pt-2 border-t border-slate-200">
                                 <strong class="block text-slate-900 text-xs uppercase tracking-wide">Estatus legal</strong>
                                 <p class="text-slate-600 mt-1 text-xs">Organización de la Sociedad Civil constituida legalmente.</p>
@@ -224,9 +359,8 @@
                         </div>
 
                         <div class="pt-2">
-                            <a href="#" data-target="sec-privacidad" class="btn-navegacion text-[#8A0B58] font-semibold hover:underline flex items-center gap-1 text-sm">
-                                <!-- Directriz 2: Aplicado pointer-events-none al SVG para blindar el botón -->
-                                <svg class="w-4 h-4 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                            <a href="#" id="link-privacidad-panel" class="text-[#8A0B58] font-semibold hover:underline flex items-center gap-1 text-sm">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
                                 Consultar Aviso de Privacidad
                             </a>
                         </div>
@@ -235,15 +369,16 @@
             </div>
         </section>
 
-        <!-- SECCIÓN PRIVACIDAD -->
-        <section id="sec-privacidad" class="seccion-app w-full max-w-4xl mx-auto px-4 py-12 space-y-8 oculto transition-all">
+        <section id="sec-privacidad" class="w-full max-w-4xl mx-auto px-4 py-12 space-y-8 oculto transition-all">
             <div class="text-center space-y-4 mb-8">
                 <h2 class="font-titulo text-3xl md:text-4xl font-bold text-slate-900">Aviso de Privacidad Integral</h2>
                 <div class="h-1 w-20 bg-[#5B1E7A] mx-auto rounded-full"></div>
             </div>
 
             <div class="bg-white/95 backdrop-blur-md p-8 md:p-12 rounded-2xl border border-slate-200 shadow-lg text-slate-700 font-light text-sm leading-relaxed space-y-6 text-justify">
+                
                 <p><strong>Seguridad y Crecimiento Juvenil A.C.</strong> (en adelante "El Responsable"), con domicilio operativo en el Estado de Guanajuato, México, es responsable de recabar sus datos personales, del uso que se le dé a los mismos y de su protección, en estricto apego a la <em>Ley Federal de Protección de Datos Personales en Posesión de los Particulares</em> (LFPDPPP), su Reglamento y demás normatividad aplicable.</p>
+
                 <h3 class="font-titulo text-lg font-bold text-slate-900 pt-4 border-b border-slate-100 pb-1">I. Datos Personales Recabados</h3>
                 <p>Para llevar a cabo las finalidades descritas en el presente aviso, recabaremos los siguientes datos personales mediante nuestros canales de contacto (formulario web, correo electrónico, redes sociales o vía telefónica) o de manera directa durante la ejecución de proyectos en campo:</p>
                 <ul class="list-disc pl-6 space-y-1">
@@ -251,121 +386,115 @@
                     <li>Correo electrónico y número telefónico de contacto.</li>
                     <li>Fotografías, imágenes y/o sonidos captados durante la ejecución de proyectos operativos, talleres y brigadas.</li>
                 </ul>
+                <p><strong>Datos Personales Sensibles:</strong> Le informamos que, para efectos del contacto inicial a través de este sitio web, El Responsable <strong>no</strong> recaba datos personales sensibles.</p>
+
                 <h3 class="font-titulo text-lg font-bold text-slate-900 pt-4 border-b border-slate-100 pb-1">II. Finalidades del Tratamiento</h3>
                 <p>Los datos personales que recabamos serán utilizados para las siguientes finalidades principales, necesarias para el servicio o vinculación que solicita:</p>
                 <ul class="list-disc pl-6 space-y-1">
                     <li>Atender, procesar y dar respuesta a solicitudes de información, asesoría o apoyo comunitario.</li>
                     <li>Establecer contacto para gestionar alianzas, voluntariados y canalización de donaciones.</li>
+                    <li>Mantener un padrón de beneficiarios y organizaciones aliadas para auditorías internas e informes de resultados.</li>
                 </ul>
+
+                <h3 class="font-titulo text-lg font-bold text-slate-900 pt-4 border-b border-slate-100 pb-1">III. Uso de Imágenes y Material Audiovisual (Trabajo en Campo)</h3>
+                <p>Como parte de la comprobación y evidencia de nuestras intervenciones operativas, El Responsable podrá recabar fotografías, videos y/o audios de los beneficiarios y asistentes a los talleres. Este material será tratado como dato personal y utilizado de manera exclusiva como evidencia operativa, rendición de cuentas ante autoridades o donantes, transparencia institucional y, previa autorización, como material informativo sobre los programas de la Asociación Civil.</p>
+                <p><strong>Tratamiento de imágenes de menores y grupos vulnerables:</strong> La captura, fijación y difusión de imágenes que hagan identificables a niñas, niños, adolescentes o personas en estado de vulnerabilidad, requerirá invariablemente el consentimiento previo, expreso y por escrito del padre, madre, tutor o representante legal. Este consentimiento se recabará en campo mediante formatos físicos específicos de autorización de uso de imagen, salvaguardando en todo momento el interés superior de la niñez y su dignidad.</p>
+
+                <h3 class="font-titulo text-lg font-bold text-slate-900 pt-4 border-b border-slate-100 pb-1">IV. Transferencia de Datos</h3>
+                <p>Sus datos personales no serán transferidos ni compartidos con terceros ajenos a los objetivos institucionales con fines de lucro. Las transferencias únicamente se realizarán sin necesidad de su consentimiento en los supuestos taxativos previstos en el <strong>Artículo 37 de la LFPDPPP</strong> (ej. requerimiento de autoridades competentes debidamente fundado y motivado).</p>
+
+                <h3 class="font-titulo text-lg font-bold text-slate-900 pt-4 border-b border-slate-100 pb-1">V. Ejercicio de los Derechos ARCO</h3>
+                <p>Usted tiene derecho a conocer qué datos personales tenemos de usted y las condiciones de su uso (<strong>Acceso</strong>); solicitar la corrección de su información en caso de ser inexacta (<strong>Rectificación</strong>); exigir la eliminación de nuestros registros (<strong>Cancelación</strong>); y oponerse al uso de sus datos para fines específicos, incluyendo la difusión de su imagen (<strong>Oposición</strong>).</p>
+                <p>Para ejercer sus Derechos ARCO, deberá enviar una solicitud al correo electrónico: <strong>acseguridadycrecimientojuvenil@gmail.com</strong>. La solicitud debe incluir: nombre completo, documento oficial que acredite su identidad (o la representación legal), y la descripción clara y precisa de los datos sobre los cuales busca ejercer el derecho.</p>
+
+                <h3 class="font-titulo text-lg font-bold text-slate-900 pt-4 border-b border-slate-100 pb-1">VI. Cambios al Aviso de Privacidad</h3>
+                <p>El presente aviso de privacidad puede sufrir modificaciones derivadas de nuevos requerimientos legales o de nuestras necesidades operativas. Nos comprometemos a mantenerlo informado sobre los cambios a través de actualizaciones publicadas en este mismo sitio web.</p>
+
                 <p class="pt-4 text-xs text-slate-500 text-center">Última actualización: Julio 2026</p>
             </div>
         </section>
+
     </main>
 
     <footer class="relative z-20 bg-gradient-to-r from-[#5B1E7A] via-[#8A0B58] to-[#A10A0A] text-white border-t border-[#3d1452] font-light w-full mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-1 md:grid-cols-2 gap-8">
             <div class="space-y-4">
                 <div class="flex items-center gap-3">
-                    <img src="img/logo-sin-fondo.png" alt="Logo Blanco" class="h-12 w-auto brightness-0 invert pointer-events-none">
-                    <span class="font-titulo font-bold text-white text-lg tracking-tight block pointer-events-none">Seguridad y Crecimiento Juvenil A.C.</span>
+                    <img src="img/logo-sin-fondo.png" alt="Logo Blanco" class="h-12 w-auto brightness-0 invert">
+                    <span class="font-titulo font-bold text-white text-lg tracking-tight block">Seguridad y Crecimiento Juvenil A.C.</span>
                 </div>
                 <p class="text-sm max-w-md leading-relaxed text-purple-100">
                     Trabajando por la reestructuración del tejido social y la cultura de paz.
                 </p>
+            </div>
+            <div class="space-y-4">
+                <h3 class="font-titulo font-semibold text-white text-lg tracking-wide border-b border-white/20 pb-2 inline-block">Contacto institucional</h3>
+                <ul class="space-y-3 text-sm text-purple-50">
+                    <li><span class="font-semibold text-white">Teléfono:</span> +52 473 736 1058</li>
+                    <li><span class="font-semibold text-white">Ubicación:</span> Guanajuato, Gto., México.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-purple-200 font-normal">
+            <div>&copy; 2026 Seguridad y Crecimiento Juvenil A.C. Todos los derechos reservados.</div>
+            <div class="flex items-center gap-5">
+                <a href="https://www.facebook.com/profile.php?id=61574579185425&locale=es_LA" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1.5 font-semibold">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/></svg>
+                    Facebook
+                </a>
+                <a href="https://www.instagram.com/seg_crecimiento_juvenil_ac/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1.5 font-semibold">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    Instagram
+                </a>
+                <a href="mailto:acseguridadycrecimientojuvenil@gmail.com" class="hover:text-white transition-colors flex items-center gap-1.5 font-semibold">
+                    <svg class="w-4 h-4 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    Correo
+                </a>
+                <span class="text-white/30 hidden md:inline">|</span>
+                <a href="#" id="link-privacidad-footer" class="hover:text-white transition-colors underline">Aviso de Privacidad</a>
             </div>
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            
-            const datosPilares = [
-                { id: "01", titulo: "Apoyo institucional", desc: "Fortalecemos la estructura operativa y administrativa de organismos aliados, centros de rehabilitación y colectivos comunitarios." },
-                { id: "02", titulo: "Orientación familiar", desc: "Acompañamos a los núcleos familiares en crisis, dotándolos de estrategias para afrontar escenarios de riesgo o violencia." },
-                { id: "03", titulo: "Reintegración comunitaria", desc: "Desarrollamos redes de apoyo vecinal para asegurar que las personas se reincorporen activamente a su entorno." },
-                { id: "04", titulo: "Cultura de paz", desc: "Fomentamos la legalidad y la resolución pacífica de conflictos en zonas vulnerables, promoviendo espacios seguros." },
-                { id: "05", titulo: "Capacitación y oficios", desc: "Impulsamos la formación técnica como herramienta de autosuficiencia, combatiendo la marginación económica." },
-                { id: "06", titulo: "Salud mental", desc: "Coordinamos brigadas psicológicas enfocadas en superar traumas y lograr estabilidad emocional para el crecimiento personal." }
-            ];
+            const btnInicio = document.getElementById('nav-inicio');
+            const btnFilosofia = document.getElementById('nav-filosofia');
+            const btnProyectos = document.getElementById('nav-proyectos');
+            const btnContacto = document.getElementById('nav-contacto');
+            const btnLogo = document.getElementById('logo-inicio');
+            const btnPrivacidadPanel = document.getElementById('link-privacidad-panel');
+            const btnPrivacidadFooter = document.getElementById('link-privacidad-footer');
+            const secInicio = document.getElementById('sec-inicio');
+            const secFilosofia = document.getElementById('sec-filosofia');
+            const secProyectos = document.getElementById('sec-proyectos');
+            const secContacto = document.getElementById('sec-contacto');
+            const secPrivacidad = document.getElementById('sec-privacidad');
+            const todosLosEnlacesMain = document.querySelectorAll('.nav-link');
+            const todasLasSecciones = [secInicio, secFilosofia, secProyectos, secContacto, secPrivacidad];
 
-            const datosProyectos = [
-                {
-                    año: "2026",
-                    titulo: "Consolidación de alianzas y expansión",
-                    desc: "Fortalecimiento de las capacidades operativas mediante la consolidación de redes de apoyo interinstitucional.",
-                    abierto: true
-                },
-                {
-                    año: "2025",
-                    titulo: "Desarrollo de capacidades técnicas",
-                    desc: "Ejecución de programas de capacitación en oficios orientados a la rápida inserción laboral."
-                }
-            ];
-
-            // Directriz 3: Corrección jerárquica SEO (Implementación de <h3> para los títulos dinámicos)
-            const renderizarPilares = () => {
-                const contenedor = document.getElementById('contenedor-pilares');
-                contenedor.innerHTML = datosPilares.map(pilar => `
-                    <div class="bg-white/95 backdrop-blur-md p-6 rounded-2xl border border-white shadow-md transition-transform hover:-translate-y-1">
-                        <div class="text-[#8A0B58] font-bold text-2xl mb-2">${pilar.id}</div>
-                        <h3 class="font-titulo font-bold text-slate-900 text-base mb-2 font-semibold">${pilar.titulo}</h3>
-                        <p class="text-sm text-slate-600 font-light leading-relaxed">${pilar.desc}</p>
-                    </div>
-                `).join('');
-            };
-
-            const renderizarProyectos = () => {
-                const contenedor = document.getElementById('contenedor-proyectos');
-                contenedor.innerHTML = datosProyectos.map(proj => `
-                    <details class="group bg-white/95 backdrop-blur-md rounded-2xl shadow-lg border border-slate-200 overflow-hidden" ${proj.abierto ? 'open' : ''}>
-                        <summary class="cursor-pointer bg-slate-50 hover:bg-slate-100 transition-colors p-6 font-titulo font-bold text-xl text-[#5B1E7A] flex justify-between items-center list-none select-none">
-                            Proyectos Operativos ${proj.año}
-                            <!-- Directriz 2 aplicada al SVG del acordeón -->
-                            <svg class="w-5 h-5 text-slate-400 transition-transform duration-300 group-open:rotate-180 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </summary>
-                        <div class="p-6 md:p-8 border-t border-slate-100 flex flex-col md:flex-row gap-8">
-                            <div class="flex-1 space-y-4">
-                                <h3 class="font-titulo font-bold text-slate-900 text-lg">${proj.titulo}</h3>
-                                <p class="text-slate-600 text-sm font-light leading-relaxed text-justify md:text-left">${proj.desc}</p>
-                            </div>
-                        </div>
-                    </details>
-                `).join('');
-            };
-
-            const inicializarNavegacion = () => {
-                const secciones = document.querySelectorAll('.seccion-app');
-                const linksNav = document.querySelectorAll('.nav-link');
-
-                document.body.addEventListener('click', (e) => {
-                    const btn = e.target.closest('.btn-navegacion');
-                    if (!btn) return;
-
-                    e.preventDefault();
-                    const targetId = btn.getAttribute('data-target');
-                    if (!targetId) return;
-
-                    secciones.forEach(sec => sec.classList.add('oculto'));
-                    const targetSeccion = document.getElementById(targetId);
-                    if (targetSeccion) targetSeccion.classList.remove('oculto');
-
-                    linksNav.forEach(link => {
-                        link.classList.remove('text-purple-700', 'font-bold');
-                        link.classList.add('text-slate-600');
-                    });
-
-                    if (btn.classList.contains('nav-link')) {
-                        btn.classList.remove('text-slate-600');
-                        btn.classList.add('text-purple-700', 'font-bold');
-                    }
-
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
+            /* Función de enrutamiento interno de vistas */
+            function activarSeccion(seccionActiva, enlaceActivo) {
+                todasLasSecciones.forEach(sec => sec.classList.add('oculto'));
+                seccionActiva.classList.remove('oculto');
+                todosLosEnlacesMain.forEach(link => {
+                    link.classList.remove('text-purple-700', 'font-bold');
+                    link.classList.add('text-slate-600');
                 });
-            };
+                if (enlaceActivo) {
+                    enlaceActivo.classList.remove('text-slate-600');
+                    enlaceActivo.classList.add('text-purple-700', 'font-bold');
+                }
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
 
-            renderizarPilares();
-            renderizarProyectos();
-            inicializarNavegacion();
+            btnInicio.addEventListener('click', (e) => { e.preventDefault(); activarSeccion(secInicio, btnInicio); });
+            btnFilosofia.addEventListener('click', (e) => { e.preventDefault(); activarSeccion(secFilosofia, btnFilosofia); });
+            btnProyectos.addEventListener('click', (e) => { e.preventDefault(); activarSeccion(secProyectos, btnProyectos); });
+            btnContacto.addEventListener('click', (e) => { e.preventDefault(); activarSeccion(secContacto, btnContacto); });
+            btnLogo.addEventListener('click', (e) => { e.preventDefault(); activarSeccion(secInicio, btnInicio); });
+            btnPrivacidadPanel.addEventListener('click', (e) => { e.preventDefault(); activarSeccion(secPrivacidad, null); });
+            btnPrivacidadFooter.addEventListener('click', (e) => { e.preventDefault(); activarSeccion(secPrivacidad, null); });
         });
     </script>
 </body>
