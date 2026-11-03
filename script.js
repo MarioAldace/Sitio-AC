@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (!targetId) return;
 
-        // Pausa cualquier audio activo al cambiar de sección
         document.querySelectorAll('audio').forEach(audio => audio.pause());
 
         secciones.forEach(sec => {
@@ -81,11 +80,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // --- CONFIGURACIÓN DE LA GALERÍA (47 FOTOS) ---
     const TOTAL_FOTOS = 47; 
     const FOTOS_POR_PAGINA = 24; 
-    const RUTA_GALERIA = 'img/galeria/Foto ('; 
-    const EXTENSION_FOTO = ').webp'; 
+    const RUTA_GALERIA = 'img/galeria/foto-'; 
+    const EXTENSION_FOTO = '.webp'; 
 
     let fotosMostradas = 0;
     let indiceActualLightbox = 1;
@@ -112,7 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
             img.decoding = 'async';
             img.className = 'w-full h-full object-cover transition-transform duration-500 group-hover:scale-105';
 
-            // Overlay sutil con lupa al pasar el cursor
             const overlay = document.createElement('div');
             overlay.className = 'absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/25 transition-colors flex items-center justify-center';
             overlay.innerHTML = `<span class="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 text-slate-900 rounded-full p-2 shadow-md"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg></span>`;
@@ -187,7 +184,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.key === 'ArrowRight') navegarLightbox(1);
         });
 
-        // Soporte táctil (Swipe) para teléfonos móviles en el Lightbox
         let touchStartX = 0;
         modal?.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
