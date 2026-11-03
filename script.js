@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- CONFIGURACIÓN DE LA GALERÍA (47 FOTOS) ---
     const TOTAL_FOTOS = 47; 
     const FOTOS_POR_PAGINA = 24; 
-    const RUTA_GALERIA = 'img/galeria/foto ('; 
+    const RUTA_GALERIA = 'img/galeria/Foto ('; 
     const EXTENSION_FOTO = ').webp'; 
 
     let fotosMostradas = 0;
